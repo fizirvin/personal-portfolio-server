@@ -17,6 +17,10 @@ const pathSchema = new Schema({
     courseName: {
       type: String,
       required: true
+    },
+    level: {
+      type: String,
+      required: true
     }
   }]
 

@@ -10,12 +10,15 @@ const typeDefs = `
         _id: ID!
         pathName: String!
         coreTechnology: String!
+        urlImage: String
         courses: [Course]
     }
 
     type Course {
         _id: ID!
         courseName: String!
+        level: String!
+        urlImage: String
     }
 
 
