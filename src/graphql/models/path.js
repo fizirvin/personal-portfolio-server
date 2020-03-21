@@ -9,6 +9,15 @@ const pathSchema = new Schema({
     type: String,
     required: true
   },
+  urlPath: {
+    type: String
+  },
+  urlPathCertification: {
+    type: String
+  },
+  urlImage: {
+    type: String
+  },
   courses:[{
     courseId: {
       type: Schema.Types.ObjectId,
@@ -21,6 +30,24 @@ const pathSchema = new Schema({
     level: {
       type: String,
       required: true
+    },
+    urlImage: {
+      type: String
+    },
+    urlRepository: {
+      type: String
+    },
+    urlCourse: {
+      type: String
+    },
+    urlCertification: {
+      type: String
+    },
+    urlInstructor: {
+      type: String
+    },
+    platform: {
+      type: String
     }
   }]
 

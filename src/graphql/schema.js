@@ -4,12 +4,15 @@ import { resolvers } from "./resolvers.js";
 const typeDefs = `
     type Query {
         paths: [Path]
+        techs: [Technology]
     }
 
     type Path {
         _id: ID!
         pathName: String!
         coreTechnology: String!
+        urlPath: String
+        urlPathCertification: String
         urlImage: String
         courses: [Course]
     }
@@ -19,6 +22,17 @@ const typeDefs = `
         courseName: String!
         level: String!
         urlImage: String
+        urlRepository: String
+        urlCourse: String
+        urlCertification: String
+        urlInstructor: String
+        platform: String
+    }
+
+    type Technology {
+        _id: ID!
+        technologyName: String
+        paths: [Path]
     }
 
 

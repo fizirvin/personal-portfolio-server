@@ -12,4 +12,4 @@ const TechnologySchema = new Schema({
   }]
 });
 
-export default model('Technology', TechnologySchema);
+export default model('techs', TechnologySchema);
