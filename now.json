@@ -1,9 +1,0 @@
-{
-    "name": "personal-portfolio-server",
-    "version": 2,
-    "env": {
-        "DATABASE_URL": "mongodb+srv://db_user:OjNRfnIPaeTHneWh@cluster0-3dm6n.mongodb.net/education?retryWrites=true&w=majority"
-    },
-    "builds": [{ "src": "src/index.js", "use": "@now/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "/src/index.js" }]
-  }
