@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import graphqlHTTP from 'express-graphql';
 
 import { resolvers }  from './graphql/resolvers.js'
@@ -12,14 +13,14 @@ import { connect } from './database';
 
 const PORT = api.port;
 const app = express();
-
+app.use(cors());
 app.get('/', (req, res) =>{
     res.json({
         message: 'Hello World'
     })
   });
 
-  app.use('/gra', graphqlHTTP({
+  app.use('/graph', graphqlHTTP({
     graphiql: true,
     schema: schema,
     rootValue: resolvers,
