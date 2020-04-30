@@ -14,6 +14,7 @@ const typeDefs = `
         urlPath: String
         urlPathCertification: String
         urlImage: String
+        cert: String
         courses: [Course]
     }
 

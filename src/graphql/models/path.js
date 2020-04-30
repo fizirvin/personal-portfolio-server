@@ -18,6 +18,9 @@ const pathSchema = new Schema({
   urlImage: {
     type: String
   },
+  cert: {
+    type: String
+  },
   courses:[{
     courseId: {
       type: Schema.Types.ObjectId,
