@@ -4,7 +4,7 @@ import { resolvers } from "./resolvers.js";
 const typeDefs = `
     type Query {
         paths: [Path]
-        techs: [Technology]
+        techs(type: String, family: String, os: String): [Technology]
     }
 
     type Path {

@@ -15,11 +15,12 @@ export const resolvers = {
 
             const visit = new Visit({
               ip: ip,
+              type: args.type,
+              family: args.family,
+              os: args.os,
               visitedAt: zonedDate, 
             });
-            const createdVisit = await visit.save();
-
-            console.log(ip, zonedDate, createdVisit)
+            await visit.save();
             return await techs.find().populate({path: 'paths', model: 'path'});
           }
     }
