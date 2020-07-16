@@ -5,6 +5,7 @@ const typeDefs = `
     type Query {
         paths: [Path]
         techs(type: String, family: String, os: String): [Technology]
+        jobs: [Job]
     }
 
     type Path {
@@ -16,6 +17,14 @@ const typeDefs = `
         urlImage: String
         cert: String
         courses: [Course]
+    }
+
+    type Job {
+        _id: ID!
+        name: String!
+        link: String!
+        type: String!
+        logo: String
     }
 
     type Course {
@@ -35,6 +44,20 @@ const typeDefs = `
         technologyName: String
         paths: [Path]
     }
+
+    type Mutation { 
+        newJob(_id: ID, input: NewJob ): Job
+    
+    }
+
+    input NewJob {
+        name: String!
+        link: String!
+        type: String!
+        logo: String
+    }
+
+
 
 
 

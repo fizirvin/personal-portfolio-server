@@ -7,8 +7,7 @@ import schema from './graphql/schema.js';
 import { api } from '../config.js';
 import { connect } from './database';
 
-
-
+import router from './routes/s3.routes.js'
 
 
 const PORT = api.port;
@@ -19,6 +18,8 @@ app.get('/', (req, res) =>{
         message: 'Hello World'
     })
   });
+
+  app.use(router);
 
   app.use('/graph', graphqlHTTP({
     graphiql: true,

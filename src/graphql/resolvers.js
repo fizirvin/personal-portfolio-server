@@ -2,6 +2,7 @@ import path from './models/path.js';
 import techs from './models/technology.js';
 import zonedD from '../functions/zonedD'
 import Visit from './models/visit.js'
+import jobs from './models/jobs.js'
 
 export const resolvers = {
     Query: {
@@ -23,5 +24,12 @@ export const resolvers = {
             await visit.save();
             return await techs.find().populate({path: 'paths', model: 'path'});
           }
+    },
+    Mutation: {
+      async newJob(_, { input }){
+        const item = new jobs(input);
+        await item.save();   
+        return item;
+      },
     }
 }
