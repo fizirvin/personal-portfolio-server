@@ -9,6 +9,9 @@ export const resolvers = {
         async paths(){
             return await path.find();
           },
+          async jobs(){
+            return await jobs.find();
+          },
           async techs(parent, args, req){
             const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || 'not'
             const date = new Date();
