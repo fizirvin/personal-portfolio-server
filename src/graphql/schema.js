@@ -1,7 +1,12 @@
 import { makeExecutableSchema } from "graphql-tools";
 import { resolvers } from "./resolvers.js";
 
+
+
 const typeDefs = `
+
+scalar Date
+
     type Query {
         paths: [Path]
         techs(type: String, family: String, os: String): [Technology]
@@ -25,6 +30,15 @@ const typeDefs = `
         link: String!
         type: String!
         logo: String
+        applications: [Application]
+    }
+
+    type Application {
+        _id: ID!
+        title: String
+        company: String
+        date: String
+        status: String
     }
 
     type Course {
@@ -47,6 +61,7 @@ const typeDefs = `
 
     type Mutation { 
         newJob(_id: ID, input: NewJob ): Job
+        newApplication(_id: ID, input: NewApplication ): Application
     
     }
 
@@ -55,6 +70,13 @@ const typeDefs = `
         link: String!
         type: String!
         logo: String
+    }
+
+    input NewApplication {
+        title: String
+        company: String
+        date: String
+        status: String
     }
 
 
